@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title> Hello World</title>
+  </head>
+  <body>
+    <canvas id="canvas" width="300" height="300"></canvas>
+    <script type="text/javascript">
+      var canvas = document.querySelector("canvas");
+      var drawingSurface = canvas.getContext("2d");
+
+      update();
+
+      function update(){
+        requestAnimationFrame(update, canvas);
+        render();
+      }
+
+      function render(){
+        drawingSurface.fillStyle = "red";
+        drawingSurface.fillRect(0, 0, canvas.width, canvas.height);
+      }
+    </script>
+  </body>
+</html>
